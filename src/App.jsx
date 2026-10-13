@@ -5,6 +5,7 @@ import ParticleBackground from './components/ParticleBackground';
 import MainMenu from './components/MainMenu';
 import ProjectCard from './components/ProjectCard';
 import { Database, Cpu, Globe, Terminal } from 'lucide-react';
+import pixelAvatar from './assets/ricardo-pixel-avatar.png';
 
 function App() {
   const [repos, setRepos] = useState([]);
@@ -75,9 +76,9 @@ function App() {
               margin: '0 auto'
             }}>
               <img 
-                src="https://avatars.githubusercontent.com/u/84126131?v=4" 
-                alt="Profile" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(0.5) brightness(1.1)' }}
+                src={pixelAvatar}
+                alt="Ricardo Xu 的游戏像素风头像"
+                style={{ width: '100%', height: '100%', objectFit: 'contain', imageRendering: 'pixelated', display: 'block' }}
               />
               {/* Decorative Frame Elements */}
               <div style={{ position: 'absolute', top: -10, left: -10, width: '30px', height: '30px', borderTop: '4px solid #FFD700', borderLeft: '4px solid #FFD700' }} />
