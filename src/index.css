@@ -99,3 +99,27 @@ h1, h2, h3, .menu-item {
 .skill-bar-active {
   animation: pulse 2s infinite ease-in-out;
 }
+
+.profile-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+main {
+  overflow-wrap: anywhere;
+}
+
+.experience-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+@media (max-width: 800px) {
+  .profile-grid,
+  .experience-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

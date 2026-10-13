@@ -1,9 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const MainMenu = () => {
-  const menuItems = ['Overview', 'Inventory', 'Skills', 'Log'];
-
   // Level & EXP Calculation Logic
   const birthDate = new Date(2001, 0, 31); // 2001-01-31
   const today = new Date();
