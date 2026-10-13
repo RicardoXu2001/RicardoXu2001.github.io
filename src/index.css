@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Microsoft YaHei', 'PingFang SC', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -110,6 +110,49 @@ main {
 
 .experience-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+.header-controls,
+.system-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-controls {
+  flex-wrap: wrap;
+}
+
+.language-switch {
+  display: flex;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  padding: 3px;
+  gap: 3px;
+}
+
+.language-switch button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--gold-primary);
+  font: 600 0.8rem 'Inter', 'Microsoft YaHei', sans-serif;
+  cursor: pointer;
+}
+
+.language-switch button[aria-pressed='true'] {
+  background: var(--gold-primary);
+  color: var(--bg-color);
+}
+
+.language-switch button:hover {
+  box-shadow: inset 0 0 0 1px var(--gold-primary);
+}
+
+.language-switch button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
 }
 
 @media (max-width: 800px) {

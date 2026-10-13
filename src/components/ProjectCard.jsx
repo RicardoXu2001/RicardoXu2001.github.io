@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Star, Code } from 'lucide-react';
 
-const ProjectCard = ({ repo }) => {
+const ProjectCard = ({ repo, t }) => {
   return (
     <motion.div
       layout
@@ -42,13 +42,13 @@ const ProjectCard = ({ repo }) => {
       </div>
 
       <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.6)', lineHeight: '1.4', flexGrow: 1 }}>
-        {repo.description || 'No description provided for this module.'}
+        {Object.hasOwn(t.repoDescriptions, repo.name) ? t.repoDescriptions[repo.name] : repo.description || t.noDescription}
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#FFD700' }}>
           <Code size={14} />
-          <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{repo.language || 'DATA'}</span>
+          <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{repo.language || t.data}</span>
         </div>
         
         <motion.a
@@ -58,7 +58,7 @@ const ProjectCard = ({ repo }) => {
           whileHover={{ x: 5 }}
           style={{ color: '#FFD700', display: 'flex', alignItems: 'center', gap: '0.3rem', textDecoration: 'none', fontSize: '0.8rem' }}
         >
-          EXECUTE <ExternalLink size={14} />
+          {t.openProject} <ExternalLink size={14} />
         </motion.a>
       </div>
 
